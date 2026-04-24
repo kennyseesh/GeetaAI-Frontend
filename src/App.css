@@ -79,24 +79,32 @@ body, html, #root {
 .character {
   position: absolute;
   bottom: 0;
-  max-height: 85vh;
   transition: transform 0.5s ease;
   filter: drop-shadow(0 0 25px rgba(0,0,0,0.9));
 }
 
-/* ✅ FIXED ARJUNA (BOTH SCREENS) */
-.arjuna-home,
-.arjuna-kneeling {
-  left: -60px;
-  max-height: 65vh;
-  max-width: 22vw;
+/* ✅ HOME ARJUNA */
+.arjuna-home {
+  left: -40px;
+  max-height: 70vh;
+  max-width: 25vw;
   width: auto;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .arjuna-home:hover {
   transform: scale(1.05);
   filter: drop-shadow(0 0 35px rgba(255, 215, 0, 0.5));
+}
+
+/* ✅ INPUT ARJUNA (FIXED POSITION) */
+.arjuna-kneeling {
+  left: 10px;
+  max-height: 65vh;
+  max-width: 30vw;
+  width: auto;
+  object-fit: contain;
 }
 
 .krishna-right {
@@ -110,11 +118,13 @@ body, html, #root {
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
   position: relative;
   z-index: 3;
+  text-align: center;
 }
 
 .subtitle-text {
   color: #ffffff;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .speech-bubble {
@@ -264,7 +274,7 @@ body, html, #root {
   align-items: center;
 }
 
-/* ✅ FIXED BUTTON */
+/* BUTTON */
 .music-btn {
   position: absolute;
   top: 20px;
@@ -278,7 +288,7 @@ body, html, #root {
   cursor: pointer;
 }
 
-/* MOBILE */
+/* ✅ RESPONSIVE FIX */
 @media (max-width: 768px) {
 
   body, html {
@@ -289,29 +299,39 @@ body, html, #root {
     display: none;
   }
 
+  .screen {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
   .speech-bubble {
     position: relative;
     width: 100%;
+    max-width: 100%;
     left: 0;
     top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .arjuna-bubble,
   .krishna-bubble {
     width: 100%;
-    max-height: none;
     transform: none;
-  }
-
-  .screen {
-    flex-direction: column;
-    padding: 15px;
+    max-height: none;
   }
 
   .continue-container {
     position: relative;
     bottom: 0;
     margin-top: 20px;
+  }
+
+  .title-text {
+    font-size: 2rem;
+  }
+
+  .subtitle-text {
+    font-size: 1rem;
   }
 }
