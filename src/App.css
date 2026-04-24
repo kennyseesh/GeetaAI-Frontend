@@ -42,11 +42,12 @@ body, html, #root {
   max-height: 70vh;
 }
 
-/* 🔥 FINAL ARJUNA FIX */
+/* 🔥 FIX BOTH (HOME + INPUT) */
+.arjuna-home,
 .arjuna-kneeling {
-  left: -50px;   /* push outside screen */
+  left: -60px;             /* push outside */
   max-height: 65vh;
-  max-width: 20vw;
+  max-width: 22vw;         /* restrict width */
   width: auto;
   object-fit: contain;
 }
@@ -194,9 +195,9 @@ body, html, #root {
   align-items: center;
 }
 
-/* 🔊 MUTE BUTTON (FIXED) */
+/* 🔊 BUTTON FIX (MATCHES JSX) */
 
-.mute-btn {
+.music-btn {
   position: absolute;
   top: 20px;
   right: 20px;
