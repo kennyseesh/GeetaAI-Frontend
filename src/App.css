@@ -75,15 +75,18 @@ body, html, #root {
   max-height: 80vh;
 }
 
+/* 🔥 FIXED */
 .arjuna-home {
   left: 5%;
 }
 
+/* 🔥 FIXED */
 .arjuna-kneeling {
-  left: 10%;
+  left: 5%;
   max-height: 65vh;
 }
 
+/* 🔥 FIXED */
 .krishna-right {
   right: 5%;
   max-height: 75vh;
@@ -108,18 +111,24 @@ body, html, #root {
   border-radius: 20px;
   padding: 20px;
   color: white;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
+/* 🔥 FIXED */
 .arjuna-bubble {
   top: 20%;
-  left: 40%;
-  width: 400px;
+  left: 38%;
+  max-width: 40%;
+  min-width: 280px;
 }
 
+/* 🔥 FIXED */
 .krishna-bubble {
   top: 15%;
   left: 10%;
-  width: 50%;
+  width: 40%;
+  max-width: 500px;
   max-height: 60vh;
   overflow-y: auto;
 }
@@ -194,8 +203,7 @@ body, html, #root {
   color: #ff6b6b;
 }
 
-/* mobile */
-
+/* 🔥 MOBILE FIX */
 @media (max-width: 768px) {
 
   .intro-title {
@@ -221,6 +229,8 @@ body, html, #root {
   .krishna-bubble,
   .arjuna-bubble {
     width: 100%;
+    max-width: 100%;
+    min-width: unset;
     max-height: none;
   }
 
