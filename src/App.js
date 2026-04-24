@@ -20,14 +20,13 @@ function App() {
 
   const audioRef = useRef(null);
 
-  // =========================
-  // START (PLAYS MUSIC)
-  // =========================
+  // START
   const handleStart = () => {
     setScreen(SCREENS.HOME);
 
     if (audioRef.current) {
       audioRef.current.volume = 0.4;
+      audioRef.current.muted = false;
       audioRef.current.play().catch(() => {});
       setIsMuted(false);
     }
@@ -40,24 +39,15 @@ function App() {
     setScreen(SCREENS.INPUT);
   };
 
-  // =========================
-  // TOGGLE AUDIO
-  // =========================
+  // 🔊 FIXED MUTE LOGIC
   const toggleAudio = () => {
     if (!audioRef.current) return;
 
-    if (audioRef.current.paused) {
-      audioRef.current.play();
-      setIsMuted(false);
-    } else {
-      audioRef.current.pause();
-      setIsMuted(true);
-    }
+    audioRef.current.muted = !audioRef.current.muted;
+    setIsMuted(audioRef.current.muted);
   };
 
-  // =========================
   // API CALL
-  // =========================
   const handleSendMessage = async () => {
     if (!userInput.trim()) return;
 
@@ -89,7 +79,7 @@ function App() {
         <source src="/backgroundmusic.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* MUTE BUTTON */}
+      {/* 🔊 BUTTON FIXED */}
       <button className="music-btn" onClick={toggleAudio}>
         {isMuted ? "🔇" : "🔊"}
       </button>
